@@ -1,0 +1,5 @@
+xacro summit_xl_std.urdf.xacro > summit_xl_std.urdf
+xacro summit_xl_omni.urdf.xacro > summit_xl_omni.urdf
+xacro summit_xls_std.urdf.xacro > summit_xls_std.urdf
+
+xacro summit_xl_gen_std.urdf.xacro > summit_xl_gen_std.urdf
