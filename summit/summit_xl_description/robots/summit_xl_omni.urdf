@@ -137,18 +137,11 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae"/>
         <!--sphere radius="${omni_wheel_radius}" /-->
-        <!--
-          <xacro:if value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae" />
-          </xacro:if>
-          <xacro:unless value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae" />
-					</xacro:unless>
--->
-        <cylinder length="0.087" radius="0.127"/>
+        <!-- <cylinder length="${omni_wheel_height}" radius="${omni_wheel_radius}" /> -->
         <!-- sphere radius="${omni_wheel_radius}"/-->
       </geometry>
     </collision>
@@ -195,18 +188,11 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae"/>
         <!--sphere radius="${omni_wheel_radius}" /-->
-        <!--
-          <xacro:if value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae" />
-          </xacro:if>
-          <xacro:unless value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae" />
-					</xacro:unless>
--->
-        <cylinder length="0.087" radius="0.127"/>
+        <!-- <cylinder length="${omni_wheel_height}" radius="${omni_wheel_radius}" /> -->
         <!-- sphere radius="${omni_wheel_radius}"/-->
       </geometry>
     </collision>
@@ -253,18 +239,11 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae"/>
         <!--sphere radius="${omni_wheel_radius}" /-->
-        <!--
-          <xacro:if value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae" />
-          </xacro:if>
-          <xacro:unless value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae" />
-					</xacro:unless>
--->
-        <cylinder length="0.087" radius="0.127"/>
+        <!-- <cylinder length="${omni_wheel_height}" radius="${omni_wheel_radius}" /> -->
         <!-- sphere radius="${omni_wheel_radius}"/-->
       </geometry>
     </collision>
@@ -311,18 +290,11 @@
       </material>
     </visual>
     <collision>
-      <origin rpy="1.5707963267948966 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae"/>
         <!--sphere radius="${omni_wheel_radius}" /-->
-        <!--
-          <xacro:if value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae" />
-          </xacro:if>
-          <xacro:unless value="${reflect}">
-              <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae" />
-					</xacro:unless>
--->
-        <cylinder length="0.087" radius="0.127"/>
+        <!-- <cylinder length="${omni_wheel_height}" radius="${omni_wheel_radius}" /> -->
         <!-- sphere radius="${omni_wheel_radius}"/-->
       </geometry>
     </collision>
