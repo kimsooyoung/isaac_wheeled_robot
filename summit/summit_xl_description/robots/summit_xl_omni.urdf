@@ -232,7 +232,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae"/>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae"/>
       </geometry>
       <material name="darkgrey">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -241,7 +241,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae"/>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae"/>
         <!--sphere radius="${omni_wheel_radius}" /-->
         <!-- <cylinder length="${omni_wheel_height}" radius="${omni_wheel_radius}" /> -->
         <!-- sphere radius="${omni_wheel_radius}"/-->
@@ -283,7 +283,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae"/>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae"/>
       </geometry>
       <material name="darkgrey">
         <color rgba="0.2 0.2 0.2 1"/>
@@ -292,7 +292,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_2.dae"/>
+        <mesh filename="package://summit_xl_description/meshes/wheels/omni_wheel_1.dae"/>
         <!--sphere radius="${omni_wheel_radius}" /-->
         <!-- <cylinder length="${omni_wheel_height}" radius="${omni_wheel_radius}" /> -->
         <!-- sphere radius="${omni_wheel_radius}"/-->
