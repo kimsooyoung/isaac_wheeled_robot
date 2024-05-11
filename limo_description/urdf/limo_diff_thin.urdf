@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<robot name="limo_diffferential" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+  </joint>
+    <!-- Base link -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 -0.15" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="package://limo_description/meshes/limo_base.dae" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <!--origin xyz="0 0 -0.15" rpy="0 0 1.57" /-->
+            <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+              <box size="0.13 0.12 0.1"/>
+          </geometry>
+        </collision>
+    </link>
+
+    <link name="inertial_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" />
+            <mass value="2.1557" />
+            <inertia ixx="0.24" ixy="0" ixz="0" 
+                     iyy="0.96" iyz="0" 
+                     izz="0.96" />
+        </inertial>
+    </link>
+
+    <joint name="inertial_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="inertial_link" />
+    </joint>
+
+        <link name="front_left_wheel_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" />
+                <mass value="0.5" />
+                <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+              <origin xyz="0 0.0225 0" rpy="1.57 0 0" />
+              <geometry>
+                  <cylinder length="0.01" radius="0.045" />
+              </geometry>
+               <friction>
+                    <ode>
+                        <mu>0.25</mu>
+                        <mu2>0.25</mu2>
+                    </ode>
+                </friction>
+            </collision>
+        </link>
+
+        <joint name="front_left_wheel" type="continuous">
+            <parent link="base_link"/>
+            <child link="front_left_wheel_link"/>
+            <origin
+                xyz="0.1 0.1 -0.1"
+                rpy="0 0 0" />
+            <axis xyz="0 1 0"/>
+        </joint>
+
+        <link name="front_right_wheel_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" />
+                <mass value="0.5" />
+                <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 3.14" />
+                <geometry>
+                    <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+              <origin xyz="0 -0.0225 0" rpy="1.57 0 0" />
+              <geometry>
+                  <cylinder length="0.01" radius="0.045" />
+              </geometry>
+              <friction>
+                    <ode>
+                        <mu>0.25</mu>
+                        <mu2>0.25</mu2>
+                    </ode>
+                </friction>
+            </collision>
+        </link>
+
+        <joint name="front_right_wheel" type="continuous">
+            <parent link="base_link"/>
+            <child link="front_right_wheel_link"/>
+            <origin
+                xyz="0.1 -0.1 -0.1"
+                rpy="0 0 0" />
+            <axis xyz="0 1 0"/>
+        </joint>
+
+        <link name="rear_left_wheel_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0 " />
+                <mass value="0.5" />
+                <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <geometry>
+                    <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+              <origin xyz="0 0.0225 0" rpy="1.57 0 0" />
+              <geometry>
+                  <cylinder length="0.01" radius="0.045" />
+              </geometry>
+              <friction>
+                    <ode>
+                        <mu>0.25</mu>
+                        <mu2>0.25</mu2>
+                    </ode>
+                </friction>
+            </collision>
+        </link>
+
+        <joint name="rear_left_wheel" type="continuous">
+            <parent link="base_link"/>
+            <child link="rear_left_wheel_link"/>
+            <origin
+                xyz="-0.1 0.1 -0.1"
+                rpy="0 0 0" />
+            <axis xyz="0 1 0"/>
+        </joint>
+
+        <link name="rear_right_wheel_link">
+            <inertial>
+                <origin xyz="0.0 0.0 0.0" />
+                <mass value="0.5" />
+                <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
+            </inertial>
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 3.14" />
+                <geometry>
+                    <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
+                </geometry>
+            </visual>
+            <collision>
+              <origin xyz="0 -0.0225 0" rpy="1.57 0 0" />
+              <geometry>
+                  <cylinder length="0.01" radius="0.045" />
+              </geometry>
+              <friction>
+                    <ode>
+                        <mu>0.25</mu>
+                        <mu2>0.25</mu2>
+                    </ode>
+                </friction>
+            </collision>
+        </link>
+
+        <joint name="rear_right_wheel" type="continuous">
+            <parent link="base_link"/>
+            <child link="rear_right_wheel_link"/>
+            <origin
+                xyz="-0.1 -0.1 -0.1"
+                rpy="0 0 0" />
+            <axis xyz="0 1 0"/>
+        </joint>
+
+<!-- 
+        <link name='laser_link'>
+            <pose>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass value="0.1"/>
+                <origin xyz="0.0 0 0" rpy="0 0 0"/>
+                <inertia
+                    ixx="1e-6" ixy="0" ixz="0"
+                    iyy="1e-6" iyz="0"
+                    izz="1e-6"
+                />
+            </inertial>
+            <visual name='laser_visual'>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.02" length="0.01"/>
+                </geometry>
+                <material name='laser_material'>
+                    <ambient>0.1 0.1 0.1 1</ambient>
+                    <diffuse>0.1 0.1 0.2 1</diffuse>
+                    <specular>0 0 0 0</specular>
+                    <emissive>0 0 0 1</emissive>
+                </material>
+            </visual>
+            <collision name='laser_collision'>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <cylinder radius="0.032" length="0.016"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint type="fixed" name="laser_joint">
+            <child link="laser_link"/>
+            <parent link="base_link"/>
+        </joint>
+
+        <link name='depth_camera_link'>
+            <pose>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass value="0.1"/>
+                <origin xyz="0.0 0 0" rpy="0 0 0"/>
+                <inertia
+                    ixx="1e-6" ixy="0" ixz="0"
+                    iyy="1e-6" iyz="0"
+                    izz="1e-6"
+                />
+            </inertial>
+            <visual name='depth_camera_visual'>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.02 0.06 0.015"/>
+                </geometry>
+                <material name='depth_camera_material'>
+                    <ambient>0.1 0.1 0.1 1</ambient>
+                    <diffuse>0.1 0.1 0.2 1</diffuse>
+                    <specular>0 0 0 0</specular>
+                    <emissive>0 0 0 1</emissive>
+                </material>
+            </visual>
+            <collision name='depth_camera_collision'>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.02 0.06 0.015"/>
+                </geometry>
+            </collision>
+        </link>
+    
+        <joint type="fixed" name="depth_camera_joint">
+            <child link="depth_camera_link"/>
+            <parent link="base_link"/>
+        </joint>
+        <link name="depth_link"></link>
+
+        <joint name="depth_camera_to_camera_joint" type="fixed">
+            <origin xyz="0 0 0" rpy="-1.57 0 -1.57 "/>
+            <parent link="depth_camera_link"/>
+            <child link="depth_link"/>
+          </joint>
+
+        <link name='imu_link'>
+            <pose>0 0 0 0 0 0</pose>
+            <inertial>
+                <mass value="0.01"/>
+                <origin xyz="0.0 0 0" rpy="0 0 0"/>
+                <inertia
+                    ixx="1e-7" ixy="0" ixz="0"
+                    iyy="1e-7" iyz="0"
+                    izz="1e-7"
+                />
+            </inertial>
+            <visual name='imu_visual'>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry>
+                <material name='imu_material'>
+                    <ambient>0.1 0.1 0.1 1</ambient>
+                    <diffuse>0.1 0.1 0.2 1</diffuse>
+                    <specular>0 0 0 0</specular>
+                    <emissive>0 0 0 1</emissive>
+                </material>
+            </visual>
+            <collision name='imu_collision'>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint type="fixed" name="imu_joint">
+            <child link="imu_link"/>
+            <parent link="base_link"/>
+        </joint> -->
+
+</robot>
