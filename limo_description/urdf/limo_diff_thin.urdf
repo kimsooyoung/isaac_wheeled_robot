@@ -47,7 +47,7 @@
                 <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
             </inertial>
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 -0.035 0" rpy="0 0 0" />
                 <geometry>
                     <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
                 </geometry>
@@ -82,7 +82,7 @@
                 <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
             </inertial>
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 3.14" />
+                <origin xyz="0 0.035 0" rpy="0 0 3.14" />
                 <geometry>
                     <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
                 </geometry>
@@ -117,7 +117,7 @@
                 <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
             </inertial>
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 -0.035 0" rpy="0 0 0" />
                 <geometry>
                     <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
                 </geometry>
@@ -152,7 +152,7 @@
                 <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
             </inertial>
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 3.14" />
+                <origin xyz="0 0.035 0" rpy="0 0 3.14" />
                 <geometry>
                     <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
                 </geometry>
@@ -180,7 +180,6 @@
             <axis xyz="0 1 0"/>
         </joint>
 
-<!-- 
         <link name='laser_link'>
             <pose>0 0 0 0 0 0</pose>
             <inertial>
@@ -212,6 +211,7 @@
             </collision>
         </link>
         <joint type="fixed" name="laser_joint">
+            <origin rpy="0 0 0" xyz="0.103 0 -0.034"/>
             <child link="laser_link"/>
             <parent link="base_link"/>
         </joint>
@@ -248,6 +248,7 @@
         </link>
     
         <joint type="fixed" name="depth_camera_joint">
+            <origin rpy="0 0 0" xyz="0.084 0 0.03"/>
             <child link="depth_camera_link"/>
             <parent link="base_link"/>
         </joint>
@@ -257,7 +258,7 @@
             <origin xyz="0 0 0" rpy="-1.57 0 -1.57 "/>
             <parent link="depth_camera_link"/>
             <child link="depth_link"/>
-          </joint>
+        </joint>
 
         <link name='imu_link'>
             <pose>0 0 0 0 0 0</pose>
@@ -290,8 +291,9 @@
             </collision>
         </link>
         <joint type="fixed" name="imu_joint">
+            <origin rpy="0 0 0" xyz="0.0 0 -0.1"/>
             <child link="imu_link"/>
             <parent link="base_link"/>
-        </joint> -->
+        </joint>
 
 </robot>
